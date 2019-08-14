@@ -1,11 +1,11 @@
 var global = {
     elements: {
         screen: document.getElementById('screen'),
-        input: document.getElementById('input')
+        input: document.getElementById('input'),
+        time: document.getElementById('time-left')
     },
     variables: {
-        colors: new Array(),
-        randomColor: new String()
+        colors: new Array()
     }
 
 };
