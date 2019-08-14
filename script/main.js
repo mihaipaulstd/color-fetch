@@ -4,7 +4,8 @@ var global = {
         input: document.getElementById('input')
     },
     variables: {
-        colors: []
+        colors: new Array(),
+        randomColor: new String()
     }
 
 };
