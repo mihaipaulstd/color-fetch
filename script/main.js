@@ -5,7 +5,8 @@ var global = {
         time: document.getElementById('time-left')
     },
     variables: {
-        colors: new Array()
+        colors: new Array(),
+        initialColor: new String()
     }
 
 };
@@ -14,5 +15,7 @@ window.addEventListener('load', init);
 
 function init() {
     setup();
+    console.log();
+    
     
 }
