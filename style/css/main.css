@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100i,400&display=swap");
 * {
   margin: 0;
   padding: 0;
-  -webkit-transition: background-color 1000ms ease-in, opacity 1000ms ease-in;
-  transition: background-color 1000ms ease-in, opacity 1000ms ease-in;
-  font-family: "Shadows Into Light", cursive;
-  font-weight: bold;
+  -webkit-transition: background-color 1000ms ease-in, opacity 2000ms ease-in;
+  transition: background-color 1000ms ease-in, opacity 2000ms ease-in;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -25,17 +23,22 @@ body {
 }
 
 #screen #input {
+  height: 100vh;
+  width: 100vw;
   position: absolute;
-  outline: none;
-  border: none;
-  border-radius: 3rem;
-  text-align: center;
-  font-size: 3rem;
   top: 40%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
-  padding: .5rem 1rem;
+  outline: none;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15vh;
+  font-weight: 100;
+  font-style: italic;
+  cursor: default;
+  text-shadow: .4vh .4vw .3vw black;
   opacity: 0;
 }
 

@@ -5,9 +5,9 @@
     margin: 0;
     padding: 0;
     transition: background-color 1000ms ease-in,
-                opacity 1000ms ease-in;
+                opacity 2000ms ease-in;
     font-family: $primary-font;
-    font-weight: bold;
+    
 }
 
 body {
@@ -26,17 +26,28 @@ body {
     }
 
     #input {
+        height: 100vh;
+        width: 100vw;
+
         position: absolute;
-        outline: none;
-        border: none;
-        border-radius: 3rem;
-        text-align: center;
-        font-size: 3rem;
         top: 40%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        padding: .5rem 1rem;
+
+        outline: none;
+        border: none;
+
+        text-align: center;
+        text-decoration: none;
+        font-size: 15vh;
+        font-weight: 100;
+        font-style: italic;
+        cursor: default;
+        text-shadow: .4vh .4vw .3vw black;
+                    
+
         opacity: 0;
+        
     }
 
     #time-left {
