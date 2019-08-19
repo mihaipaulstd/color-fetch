@@ -2,9 +2,9 @@ function setScreen() {
     global.screen.style.opacity = 1;
     setBackground();
     const colorInterval = setInterval(() => {
-        global.screen.style.transitionDuration = '3000ms';
+        global.screen.style.transitionDuration = '6000ms';
         setBackground()
-    }, 3000);
+    }, 6000);
 
 }
 
@@ -15,7 +15,7 @@ function setInput() {
 
 function setIntervalColor() {
     const color = global.colors[Math.floor(Math.random() * global.colors.length)];
-    return color.luminance >= 80 && color.luminance <= 120 ? global.intervalColor = color : setIntervalColor();
+    return color.luminance >= 60 && color.luminance <= 100 ? global.intervalColor = color : setIntervalColor();
 }
 
 function setBackground() {
