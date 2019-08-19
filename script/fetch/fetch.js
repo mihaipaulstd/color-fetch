@@ -1,5 +1,5 @@
 async function fetchColors() {
-    console.log('running');
+
     
     await fetch('http://color-names.herokuapp.com/v1/')
         .then(res => res.json())

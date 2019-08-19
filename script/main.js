@@ -6,9 +6,8 @@ var global = {
     gameOver: true,
     inputValue: new String(),
     targetColor: new String(),
+    intervalColor: new String(),
     colors: new Array(),
-    darkColor: new String(),
-    lightColor: new String(),
     colorX: new Number(),
     colorY: new Number(),
 };
@@ -16,6 +15,7 @@ var global = {
 window.addEventListener('load', init);
 
 function init() {
+    console.log('running');
     fetchColors()
         .then(() => {
             setup();
