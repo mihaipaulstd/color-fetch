@@ -6,40 +6,12 @@ function run() {
             colors.forEach(color => {
                 global.variables.colors.push(color);
             });
-            screen();
+            global.functions.init.setScreen();
+            global.functions.main.setListener();
         });
         
         
-    function screen() {
-        setColors();
-        setDelay();
-        function setColors() {
-            global.functions.setDarkColor();
-            global.functions.setLightColor();
-            const screen = global.elements.screen;
-            const input = global.elements.input;
-            const time = global.elements.time;
-            const darkColor = global.variables.darkColor;
-            const lightColor = global.variables.lightColor;
-            
-            screen.style.backgroundColor = darkColor.hex;
-            input.style.color = lightColor.hex;
-            input.style.backgroundColor = 'transparent';
-            time.style.backgroundColor = 'transparent';
-            
-            
-    
-        }
-        function setDelay(){
-            setTimeout(() => {
-                global.elements.input.style.opacity = 1;
-            }, 2000)
-            setTimeout(() => {
-                global.elements.time.style.opacity = 1;
-            }, 2500)
-            
-        }
-        
-    }
+
+
 
 }
