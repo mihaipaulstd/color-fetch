@@ -8,8 +8,7 @@ function run() {
             colors.forEach(color => {
                 global.variables.colors.push(color);
             });
-            global.functions.init.setScreen();
-            global.functions.main.setListener();
+            
         });
         
         
