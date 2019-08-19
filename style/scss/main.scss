@@ -7,19 +7,16 @@
     transition: background-color 1500ms ease-in,
                 opacity 2000ms ease-in;
     font-family: $primary-font;
+    box-sizing: border-box;
     
 }
 
-body {
-    box-sizing: border-box;
-
-}
 
 #screen {
     height: 100vh;
     width: 100vw;
     position: relative;
-    
+    animation: init 1000ms ease-in 1 forwards;
     #color-span {
         position: absolute;
 
@@ -58,7 +55,10 @@ body {
 
 }
 
-
+@keyframes init {
+    from {opacity: 0}
+    to {opacity: 1}
+}
 
 
 
