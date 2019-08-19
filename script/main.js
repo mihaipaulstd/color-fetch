@@ -7,8 +7,8 @@ var global = {
     variables: {
         gameOver: true,
         inputValue: new String(),
+        targetColor: new String(),
         colors: new Array(),
-        randomColor: new String(),
         darkColor: new String(),
         lightColor: new String(),
         colorX: new Number(),
@@ -22,8 +22,7 @@ var global = {
                 global.elements.colorSpan.innerHTML = '';
             },
             setElements: function() {
-                global.functions.setDarkColor();
-                global.functions.setLightColor();
+                global.functions.setInitialBackground();
     
                 global.elements.screen.style.backgroundColor = global.variables.lightColor.hex;
                 global.elements.input.style.color = '#fff';
@@ -38,86 +37,78 @@ var global = {
             },
         },
         main: {
-            start: {
-                start: function() {
-                    global.functions.main.start.startAnimation();
-                    global.functions.setRandomColor();
-                    
-                  
-                },
-                startAnimation: function() {
-                    
-                }
-            },
-            running: {
-                colorAnimation: function() {
-                    global.elements.input.style.transition = 'opacity 750ms ease-in-out';
-                    setTimeout(() => {
-                        
-                    }, 0);
-                    setTimeout(() => {
-                       
-                    }, 750);
-                    setTimeout(() => {
-                        
-                    }, 1500);
-                    
-                },
-            },
-            stop: {
-                stop: function() {
-                    global.functions.main.stop.stopAnimation();
-                
-                },
-                stopAnimation: function(){
-                    setTimeout(() => {
-                        
-                        
-                    }, 0);
-                    setTimeout(() => {
-                        
-                    }, 750);
-                    setTimeout(() => {
-                        
-                    }, 1500);
-                },
-            },
             setListener: function() {
                 global.elements.input.addEventListener('input', global.functions.main.listen);
             },
             listen: function(event){
+                global.variables.inputValue = event.target.value;
                 if(event.target.value.toLowerCase() === 'start' && global.variables.gameOver !== false) {
                     global.variables.gameOver = false;
-                    global.functions.main.start.start();
+                    global.functions.startAnimation();
+                    global.functions.setTargetColor();
+                    global.functions.setColor();
                     console.log('started');
                 }
+
+                
+
                 if(event.target.value.toLowerCase() === 'stop' && global.variables.gameOver !== true) {
                     global.variables.gameOver = true;
-                    global.functions.main.stop.stop();
+                    global.functions.stopAnimation();
                     console.log('stopped');
                 }
                 
             },
             
-            
-            
-            
-            
-            
 
         },
-        setLightColor: function() {
-            let color = global.variables.colors[Math.floor(Math.random() * global.variables.colors.length)];
-            color.luminance >= 75 && color.luminance <= 100 ? global.variables.lightColor = color : this.setLightColor();
+        setInitialBackground: function() {
+            const color = global.variables.colors[Math.floor(Math.random() * global.variables.colors.length)];
+            color.luminance >= 75 && color.luminance <= 100 ? global.variables.lightColor = color : this.setInitialBackground();
         },
-        setDarkColor: function() {
-            let color = global.variables.colors[Math.floor(Math.random() * global.variables.colors.length)];
-            color.luminance <= 30 ? global.variables.darkColor = color : this.setDarkColor();
+        setTargetColor: function() {
+            global.variables.targetColor = global.variables.colors[Math.floor(Math.random() * global.variables.colors.length)]
         },
-        setRandomColor: function() {
-            global.variables.randomColor = global.variables.colors[Math.floor(Math.random() * global.variables.colors.length)]
-        }
-        
+        setColor: function() {
+            const index = global.variables.colors.map(color => color.name.toLowerCase()).indexOf(event.target.value.toLowerCase()) ;
+
+            
+            if(index != -1 && global.variables.targetColor.name.toLowerCase() == global.variables.colors[index].name.toLowerCase()){
+                
+                global.elements.screen.style.backgroundColor = global.variables.colors[index].hex;
+                global.functions.setTargetColor();
+            }
+        },
+        startAnimation: function() {
+            global.elements.input.style.transition = 'opacity 750ms ease-in-out';
+            setTimeout(() => {
+                global.elements.input.setAttribute('readonly', 'readonly');
+
+            }, 0);
+            setTimeout(() => {
+                global.elements.input.style.opacity = 0;
+            }, 750);
+            setTimeout(() => {
+                global.elements.input.value = '';
+                global.elements.input.style.opacity = 1;
+                global.elements.input.removeAttribute('readonly', 'readonly'); 
+            }, 1500);
+        },
+        stopAnimation: function() {
+            global.elements.input.style.transition = 'opacity 750ms ease-in-out';
+            setTimeout(() => {
+                global.elements.input.setAttribute('readonly', 'readonly');
+
+            }, 0);
+            setTimeout(() => {
+                global.elements.input.style.opacity = 0;
+            }, 750);
+            setTimeout(() => {
+                global.elements.input.value = '';
+                global.elements.input.style.opacity = 1;
+                global.elements.input.removeAttribute('readonly', 'readonly');
+            }, 1500);
+        },
     }
 
 };
