@@ -18,8 +18,9 @@ body {
   position: relative;
 }
 
-#screen #random-color {
+#screen #color-span {
   position: absolute;
+  opacity: 0;
 }
 
 #screen #input {

@@ -1,4 +1,6 @@
 function run() {
+    console.log('running');
+    
     fetch('http://color-names.herokuapp.com/v1/')
         .then(res => res.json())
         .then(obj => obj.colors)
@@ -11,7 +13,5 @@ function run() {
         });
         
         
-
-
 
 }
