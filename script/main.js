@@ -64,7 +64,7 @@ var global = {
         },
         setInitialBackground: function() {
             const color = global.variables.colors[Math.floor(Math.random() * global.variables.colors.length)];
-            color.luminance >= 75 && color.luminance <= 100 ? global.variables.lightColor = color : this.setInitialBackground();
+            color.luminance >= 45 && color.luminance <= 95 ? global.variables.lightColor = color : this.setInitialBackground();
         },
         setTargetColor: function() {
             global.variables.targetColor = global.variables.colors[Math.floor(Math.random() * global.variables.colors.length)]
@@ -80,14 +80,15 @@ var global = {
             }
         },
         startAnimation: function() {
-            global.elements.input.style.transition = 'opacity 750ms ease-in-out';
+            global.elements.input.style.transition = 'opacity 250ms ease-out';
             setTimeout(() => {
                 global.elements.input.setAttribute('readonly', 'readonly');
 
             }, 0);
             setTimeout(() => {
                 global.elements.input.style.opacity = 0;
-            }, 750);
+                
+            }, 500);
             setTimeout(() => {
                 global.elements.input.value = '';
                 global.elements.input.style.opacity = 1;
@@ -95,18 +96,20 @@ var global = {
             }, 1500);
         },
         stopAnimation: function() {
-            global.elements.input.style.transition = 'opacity 750ms ease-in-out';
+            global.elements.input.style.transition = 'opacity 250ms ease-out';
             setTimeout(() => {
                 global.elements.input.setAttribute('readonly', 'readonly');
 
             }, 0);
             setTimeout(() => {
                 global.elements.input.style.opacity = 0;
-            }, 750);
+                global.functions.init.setScreen();
+            }, 500);
             setTimeout(() => {
                 global.elements.input.value = '';
                 global.elements.input.style.opacity = 1;
                 global.elements.input.removeAttribute('readonly', 'readonly');
+                
             }, 1500);
         },
     }
