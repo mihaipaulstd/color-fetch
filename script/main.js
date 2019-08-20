@@ -5,11 +5,18 @@ var global = {
 
     gameOver: true,
     inputValue: new String(),
-    targetColor: new String(),
-    intervalColor: new String(),
     colors: new Array(),
-    colorX: new Number(),
-    colorY: new Number(),
+    target:{
+        colorX: new Number(),
+        colorY: new Number(),
+        targetColor: new String()
+    },
+    interval: {
+        screenInterval: null,
+        intervalColor: new String(),
+
+
+    }
 };
 
 window.addEventListener('load', init);
@@ -20,6 +27,5 @@ function init() {
         .then(() => {
             setup();
             listen();
-
         })
 }
