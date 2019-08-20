@@ -1,4 +1,4 @@
 function setup() {
-    setScreen();
-    setInput();
+  setScreen();
+  setInput();
 }
