@@ -77,13 +77,14 @@ function getY() {
 
 function displayTarget() {
   const cs = global.colorSpan;
-  delayElement(cs, 2000);
   generateTarget();
   generateTargetPosition();
   cs.innerHTML = global.target.targetColor.name;
   cs.style.left = global.target.colorX + "px";
   cs.style.top = global.target.colorY + "px";
-  cs.style.opacity = 1;
+  delayElement(cs, 3500);
+  console.log(cs.style.transition);
+  
 }
 
 function delayElement(element, delay) {

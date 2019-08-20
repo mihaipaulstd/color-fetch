@@ -8,12 +8,11 @@ async function fetchColors() {
           color.name.length <= 20 &&
           color.name
             .split(" ")
-            .join()
+            .join("")
             .split("")
             .every(letter => letter.match(/^[0-9a-zA-Z]+$/))
         )
           global.colors.push(color);
       });
     });
-  return this;
 }
