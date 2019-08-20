@@ -24,5 +24,7 @@ function init() {
   fetchColors().then(() => {
     setup();
     listen();
+    
+    
   });
 }

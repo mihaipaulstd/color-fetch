@@ -1,10 +1,14 @@
 function setScreen() {
+  global.input.setAttribute("readonly", "readonly");
   global.screen.style.opacity = 1;
   setBackground();
   global.interval.screenInterval = setInterval(() => {
     global.screen.style.transitionDuration = "5000ms";
     setBackground();
   }, 5000);
+  setTimeout(() => {
+    global.input.removeAttribute("readonly", "readonly");
+  }, 2000);
 }
 
 function setInput() {
@@ -26,6 +30,6 @@ function setBackground() {
 function getLightColor() {
   const color = global.colors[Math.floor(Math.random() * global.colors.length)];
   return color.luminance >= 60 && color.luminance <= 100
-  ? color
-  : getLightColor();
+    ? color
+    : getLightColor();
 }

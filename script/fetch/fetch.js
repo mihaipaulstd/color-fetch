@@ -4,7 +4,15 @@ async function fetchColors() {
     .then(obj => obj.colors)
     .then(colors => {
       colors.forEach(color => {
-        global.colors.push(color);
+        if (
+          color.name.length <= 20 &&
+          color.name
+            .split(" ")
+            .join()
+            .split("")
+            .every(letter => letter.match(/^[0-9a-zA-Z]+$/))
+        )
+          global.colors.push(color);
       });
     });
   return this;
