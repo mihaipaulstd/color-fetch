@@ -2,6 +2,8 @@ function setScreen() {
   global.input.setAttribute("readonly", "readonly");
   global.screen.style.opacity = 1;
   setBackground();
+  reset(global.info, 2000, 1000, false, 'Available commands:');
+  reset(global.commands, 2000, 2000, false, '>\tstart');
   global.interval.screenInterval = setInterval(() => {
     global.screen.style.transitionDuration = "5000ms";
     setBackground();

@@ -3,6 +3,8 @@ var global = {
   input: document.getElementById("input"),
   colorSpan: document.getElementById("color-span"),
   form: document.getElementById('main-form'),
+  info: document.getElementById('info'),
+  commands: document.getElementById('commands'),
 
   gameOver: true,
   inputValue: new String(),
@@ -18,10 +20,10 @@ var global = {
   }
 };
 
-window.addEventListener("load", init);
+window.addEventListener('load', init);
 
 function init() {
-  console.log("running");
+  console.log('running');
   fetchColors().then(() => {
     setup();
     listen();

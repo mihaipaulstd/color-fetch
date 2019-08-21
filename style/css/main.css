@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Handlee&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -18,10 +19,34 @@
   transition: background-color 1500ms ease-in-out, opacity 1500ms ease-out;
 }
 
+#screen #info {
+  position: absolute;
+  left: 2vw;
+  bottom: 15vh;
+  font-size: 5vh;
+  color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-family: "Open Sans", sans-serif;
+  opacity: 0;
+}
+
+#screen #commands {
+  position: absolute;
+  left: 2vw;
+  bottom: 1vh;
+  font-size: 10vh;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  font-style: italic;
+  opacity: 0;
+  padding-right: 10px;
+}
+
 #screen #color-span {
   display: inline-block;
   position: absolute;
-  bottom: 10vh;
+  bottom: 15vh;
   left: 50vw;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
@@ -48,7 +73,7 @@
   background-color: transparent;
   outline: none;
   border: none;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
   text-align: center;
   text-decoration: none;
   font-family: "Handlee", cursive;
