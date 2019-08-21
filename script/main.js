@@ -9,7 +9,7 @@ var global = {
   target: {
     colorX: new Number(),
     colorY: new Number(),
-    targetColor: new String()
+    targetColor: new String(),
   },
   interval: {
     screenInterval: null,
