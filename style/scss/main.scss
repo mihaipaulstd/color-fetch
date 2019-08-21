@@ -13,20 +13,17 @@
   height: 100vh;
   width: 100vw;
   
-
-  transition: background-color 2000ms ease-in-out, opacity 1500ms ease-out;
-
+  transition: background-color 1500ms ease-in-out, opacity 1500ms ease-out;
 
   #color-span {
 		display: inline-block;
     position: absolute;
-    bottom: 15vh;
+    bottom: 10vh;
     left: 50vw;
     transform: translateX(-50%) translateY(-50%);
     color: #fff;
     text-shadow: 0.1vh 0.2vw 0.2vw black;
     background-color: rgba($color: #000, $alpha: 0.05);
-    box-shadow: .4vh -.2vw .3vw rgba(#000, .4);
     font-size: 10vh;
 		padding: 1vh 1.5vw;
     opacity: 0;
@@ -48,8 +45,9 @@
     padding-bottom: 20vh;
     text-align: center;
     text-decoration: none;
+    font-family: $primary-font;
     font-size: 15vh;
-    font-weight: 100;
+    font-weight: 300;
     cursor: default;
     text-shadow: 0.3vh 0.2vw 0.2vw black;
     &::selection {
