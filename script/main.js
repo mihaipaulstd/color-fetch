@@ -2,6 +2,7 @@ var global = {
   screen: document.getElementById("screen"),
   input: document.getElementById("input"),
   colorSpan: document.getElementById("color-span"),
+  form: document.getElementById('main-form'),
 
   gameOver: true,
   inputValue: new String(),

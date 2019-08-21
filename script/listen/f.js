@@ -1,5 +1,6 @@
 function listenInput() {
   global.input.addEventListener("input", e => {
+    
     global.inputValue = e.target.value;
 
     if (

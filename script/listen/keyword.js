@@ -1,3 +1,4 @@
 function listen() {
   listenInput();
+  preventDefault();
 }
