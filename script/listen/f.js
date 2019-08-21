@@ -10,7 +10,7 @@ function listenInput() {
       reset(global.input, 3000);
       clearInterval(global.interval.screenInterval);
       generateTarget();
-      reset(global.colorSpan, 1000, global.target.targetColor.name, 1000);
+      reset(global.colorSpan, 1000, false, global.target.targetColor.name, 1000);
       
       
       console.log("started");
@@ -23,8 +23,8 @@ function listenInput() {
       global.gameOver === false
     ) {
       global.gameOver = true;
-      reset(global.input, 2000);
-      reset(global.colorSpan, 2000);
+      reset(global.input, 3000);
+      reset(global.colorSpan, 2000, true);
       setBackground();
       setScreen();
       console.log("stopped");
@@ -32,11 +32,12 @@ function listenInput() {
   });
 }
 
-function reset(element, duration = 0, content = "", delay = 0) {
+function reset(element, duration = 0, erase = false, content = "", delay = 0) {
   setTimeout(() => {
     element.setAttribute("readonly", "readonly");
     element.style.transition = `opacity ${duration}ms ease-in-out`;
     element.style.opacity = 0;
+    if(erase) return;
     setTimeout(() => {
       element.removeAttribute("readonly", "readonly");
       element.value ? (element.value = content) : (element.innerHTML = content);
