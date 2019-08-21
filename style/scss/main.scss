@@ -3,9 +3,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: $primary-font;
+  font-family: $secondary-font;
 	box-sizing: border-box;
-	overflow: hidden;
+  overflow: hidden;
+  backface-visibility: hidden;
 }
 
 #screen {
@@ -23,14 +24,18 @@
     left: 50vw;
     transform: translateX(-50%) translateY(-50%);
     color: #fff;
+    text-shadow: 0.1vh 0.2vw 0.2vw black;
     background-color: rgba($color: #000, $alpha: 0.05);
-    font-size: 2rem;
-		padding: 20px 30px;
+    box-shadow: .4vh -.2vw .3vw rgba(#000, .4);
+    font-size: 10vh;
+		padding: 1vh 1.5vw;
     opacity: 0;
+    width: max-content;
+
   }
 
   #input {
-    height: calc(font-size + 10px);
+    height: 100vh;
     width: 100vw;
     position: absolute;
     top: 50%;
@@ -40,13 +45,13 @@
     background-color: transparent;
     outline: none;
     border: none;
-    padding-bottom: 50px;
+    padding-bottom: 20vh;
     text-align: center;
     text-decoration: none;
     font-size: 15vh;
     font-weight: 100;
     cursor: default;
-    text-shadow: 0.1vh 0.2vw 0.2vw black;
+    text-shadow: 0.3vh 0.2vw 0.2vw black;
     &::selection {
       background-color: rgba($color: #fff, $alpha: 0.02);
     }
