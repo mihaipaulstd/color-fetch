@@ -45,14 +45,6 @@ function reset(element, duration = 0, content = "", delay = 0) {
   }, delay);
 }
 
-function fadeOut(element, duration) {
-  element.style.transition = `opacity ${duration}ms ease-in-out`;
-  element.style.opacity = 0;
-}
-function fadeIn(element, duration) {
-  element.style.transition = `opacity ${duration}ms ease-in-out`;
-  element.style.opacity = 1;
-}
 
 function generateTarget() {
   global.target.targetColor =

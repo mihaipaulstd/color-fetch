@@ -5,7 +5,7 @@ async function fetchColors() {
     .then(colors => {
       colors.forEach(color => {
         if (
-          color.name.length <= 20 &&
+          color.name.length <= 25 &&
           color.name
             .split(" ")
             .join("")
