@@ -5,21 +5,23 @@ function toggle(element, duration = 0, delay = 0, erase = false, content = "") {
     element.style.opacity = 0;
     if (erase) return;
     setTimeout(() => {
-      removeReadOnly(element);
       element.value && !content
         ? (element.value = content)
         : (element.innerHTML = content);
       element.style.opacity = 1;
+      removeReadOnly(element);
+      removeDisabled(element);
     }, duration);
   }, delay);
 }
 
-function toggleInput(duration = 0, delay = 0, erase = false, content = "") {
-  toggle(global.input, duration, delay, erase, content);
+function toggleInput(duration = 0, delay = 0, erase = false) {
+  toggle(global.input, duration, delay, erase);
+  global.input.focus();
 }
 
-function toggleAvailableInfo(duration = 0, delay = 0, content = "") {
-  toggle(global.info, duration, delay, false, content);
+function toggleAvailableInfo(duration = 0, delay = 0) {
+  toggle(global.info, duration, delay, false, "Available commands:");
 }
 
 function toggleCommands(duration = 0, delay = 0) {
@@ -28,6 +30,12 @@ function toggleCommands(duration = 0, delay = 0) {
 }
 
 function toggleColorInfo(duration = 0, delay = 0) {
+  Object.values(global.current).forEach(option => {
+    setDisabled(option);
+    setTimeout(() => {
+      removeDisabled(option);
+    }, 1500);
+  });
   toggle(
     global.current.name,
     duration,
@@ -51,6 +59,12 @@ function toggleColorInfo(duration = 0, delay = 0) {
     false,
     `${global.currentColor.hex}`
   );
+
+  Object.values(global.current)
+    .filter(element => element.id.includes("copied"))
+    .forEach((span, index) => {
+      toggle(span, 1500, 200 * (index + 1), true);
+    });
 }
 
 function toggleTarget(duration = 0, delay = 0, erase = false) {

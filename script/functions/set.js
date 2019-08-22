@@ -20,11 +20,11 @@ function setColor(type) {
       generateColor();
       break;
     default:
-      toggleColorInfo(1500, 200);
+      toggleColorInfo(750, 250);
       global.screen.style.backgroundColor = global.currentColor.hex;
       return;
   }
-  toggleColorInfo(1500, 200);
+  toggleColorInfo(750, 250);
   global.screen.style.backgroundColor = global.currentColor.hex;
 }
 
@@ -36,3 +36,11 @@ function removeReadOnly(element) {
   element.removeAttribute("readonly", "readonly");
 }
 
+function setDisabled(element) {
+  element.setAttribute("disabled", "disabled");
+  document.body.style.cursor = "default";
+}
+
+function removeDisabled(element) {
+  element.removeAttribute("disabled", "disabled");
+}

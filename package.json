@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/mihaipaulstd/color-game-2/issues"
   },
-  "homepage": "https://github.com/mihaipaulstd/color-game-2#readme"
+  "homepage": "https://github.com/mihaipaulstd/color-game-2#readme",
+  "dependencies": {
+    "clipboard": "^2.0.4",
+    "tinycolor2": "^1.4.1"
+  }
 }

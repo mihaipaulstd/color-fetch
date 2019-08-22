@@ -11,7 +11,10 @@ var global = {
   current: {
     name: document.getElementById('current-name'),
     rgb: document.getElementById('current-rgb'),
-    hex: document.getElementById('current-hex')
+    hex: document.getElementById('current-hex'),
+    copiedName: document.getElementById('copied-name'),
+    copiedRgb: document.getElementById('copied-rgb'),
+    copiedHex: document.getElementById('copied-hex'),
   },
 
   gameOver: true,

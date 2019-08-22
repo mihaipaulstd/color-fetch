@@ -9,6 +9,10 @@
           box-sizing: border-box;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #screen {
@@ -61,13 +65,16 @@
   opacity: 1;
 }
 
-#screen #current a {
+#screen #current a,
+#screen #current span {
   float: right;
-  clear: both;
   opacity: 0;
   color: rgba(255, 255, 255, 0.3);
   text-shadow: 0.1vh 0.2vw 0.2vw rgba(0, 0, 0, 0.2);
-  padding: 3px 0px;
+}
+
+#screen #current a {
+  clear: right;
 }
 
 #screen #target-color {
@@ -101,8 +108,7 @@
   outline: none;
   border: none;
   text-align: center;
-  text-decoration: none;
-  font-family: "Indie Flower", cursive;
+  font-family: "Handlee", cursive;
   font-size: 14vh;
   font-weight: 300;
   text-shadow: 0.3vh 0.2vw 0.2vw black;
@@ -117,5 +123,9 @@
 
 #screen #input::selection {
   background-color: rgba(255, 255, 255, 0.02);
+}
+
+a[disabled] {
+  pointer-events: none;
 }
 /*# sourceMappingURL=main.css.map */
