@@ -19,7 +19,9 @@ function anchorListener() {
         if (e.target.id.includes("current")) {
           new ClipboardJS("a");
           e.target.setAttribute("data-clipboard-text", e.target.innerHTML);
-          toggle(e.target.nextElementSibling, 0, 0, false, "Copied!");
+          toggle(e.target.nextElementSibling, 0, 0, false, "Copied! ");
+          
+          toggle(e.target.nextElementSibling, 2000, 250, true);
         }
       });
       element.addEventListener("mouseenter", e => {
