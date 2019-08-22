@@ -9,9 +9,17 @@
   </head>
   <body>
     <div id="screen" class="">
-      <span id="color-span"></span>
+      <span id="target-color"></span>
       <span id="info"></span>
-      <span id="commands"></span>
+      <div id="commands">
+        <a id="start-command"></a>
+        <a id="stop-command"></a>
+      </div>
+      <div id="current">
+        <a id="current-name"></a>
+        <a id="current-rgb"></a>
+        <a id="current-hex"></a>
+      </div>
       <form id="main-form">
         <input
           type="text"
@@ -21,7 +29,7 @@
           autofocus
           autocomplete="off"
           spellcheck="false"
-          maxlength="25"
+          maxlength="20"
         />
       </form>
       <div id="time-left" class=""></div>
@@ -29,10 +37,14 @@
     <script src="script/main.js"></script>
     <script src="script/fetch/fetch.js"></script>
     <script src="script/setup/setup.js"></script>
-    <script src="script/setup/f.js"></script>
+    <script src="script/listen/listen.js"></script>
     <script src="script/listen/keyword.js"></script>
     <script src="script/listen/color.js"></script>
     <script src="script/listen/submit.js"></script>
-    <script src="script/listen/f.js"></script>
+    <script src="script/listen/anchor.js"></script>
+    <script src="script/listen/focus.js"></script>
+    <script src="script/functions/generate.js"></script>
+    <script src="script/functions/set.js"></script>
+    <script src="script/functions/toggle.js"></script>
   </body>
 </html>

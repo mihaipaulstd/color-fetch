@@ -4,59 +4,85 @@
   margin: 0;
   padding: 0;
   font-family: $secondary-font;
-	box-sizing: border-box;
-  overflow: hidden;
+  box-sizing: border-box;
   backface-visibility: hidden;
 }
 
 #screen {
   height: 100vh;
   width: 100vw;
-  
+
+
   transition: background-color 1500ms ease-in-out, opacity 1500ms ease-out;
-  
+
   #info {
     position: absolute;
     left: 2vw;
-    bottom: 15vh;
+    bottom: 16vh;
     font-size: 5vh;
-    color: rgba(#fff, .2);
+    color: rgba(#fff, 0.1);
+    text-shadow: 0.1vh 0.2vw 0.2vw rgba(#000, 0.2);
     border-radius: 10px;
     font-family: $ternary-font;
     opacity: 0;
   }
 
   #commands {
+    opacity: 1;
     position: absolute;
     left: 2vw;
     bottom: 1vh;
-    font-size: 10vh;
-    color: rgba(#fff, .2);
-    background-color: rgba(#000, .05);
-    border-radius: 20px;
-    font-style: italic;
-    opacity: 0;
-    padding-right: 10px;
+    font-size: 8vh;
   }
 
-  #color-span {
-		display: inline-block;
+  #start-command,
+  #stop-command {
+    text-shadow: 0.1vh 0.2vw 0.2vw rgba(#000, 0.2);
+    text-decoration: overline;
+    opacity: 0;
+  }
+
+  #start-command {
+    color: rgba(#fff, 0.3);
+  }
+
+  #stop-command {
+    color: rgba(#fff, 0.1);
+  }
+
+  #current {
     position: absolute;
-    bottom: 15vh;
+    right: 2vw;
+    top: 0vh;
+    font-size: 7vh;
+    opacity: 1;
+    a {
+      float: right;
+      clear: both;
+      opacity: 0;
+      color: rgba(#fff, 0.3);
+      text-shadow: 0.1vh 0.2vw 0.2vw rgba(#000, 0.2);
+      padding: 3px 0px;
+    }
+  }
+
+  #target-color {
+    display: inline-block;
+    position: absolute;
+    bottom: 10vh;
     left: 50vw;
     transform: translateX(-50%) translateY(-50%);
     color: #fff;
-    text-shadow: 0.1vh 0.2vw 0.2vw black;
-    background-color: rgba($color: #000, $alpha: 0.05);
+    text-shadow: 0.1vh 0.2vw 0.2vw #000;
+    font-style: italic;
     font-size: 10vh;
-		padding: 1vh 1.5vw;
+    padding: 1vh 1.5vw;
     opacity: 0;
     width: max-content;
-
   }
 
   #input {
-    height: 100vh;
+    height: 25vh;
     width: 100vw;
     position: absolute;
     top: 50%;
@@ -66,13 +92,11 @@
     background-color: transparent;
     outline: none;
     border: none;
-    padding-bottom: 10vh;
     text-align: center;
     text-decoration: none;
-    font-family: $primary-font;
-    font-size: 15vh;
+    font-family: $secondary-font;
+    font-size: 14vh;
     font-weight: 300;
-    cursor: default;
     text-shadow: 0.3vh 0.2vw 0.2vw black;
     &::selection {
       background-color: rgba($color: #fff, $alpha: 0.02);
@@ -82,3 +106,4 @@
     opacity: 0;
   }
 }
+
