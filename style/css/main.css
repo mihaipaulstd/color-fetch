@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Handlee&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +8,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  overflow: hidden;
 }
 
 body {
@@ -28,15 +27,16 @@ body {
 
 #screen #current {
   position: absolute;
-  right: 1.5rem;
+  right: 0;
   top: 0;
 }
 
 #screen #current a,
 #screen #current span {
+  padding-right: 0.25rem;
+  padding-bottom: 0.25rem;
   float: right;
-  color: rgba(255, 255, 255, 0.3);
-  text-shadow: 0.1vh 0.2vw 0.2vw rgba(0, 0, 0, 0.2);
+  color: transparent;
   opacity: 0;
 }
 
@@ -50,10 +50,10 @@ a[disabled] {
 
 @media only screen and (max-width: 768px) {
   body {
-    font-size: 1.5rem;
+    font-size: calc(1.5vw + 1.5rem);
   }
-  a, span {
-    margin-bottom: 1.5rem;
+  span {
+    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */

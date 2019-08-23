@@ -2,6 +2,7 @@ const INTERVAL_DURATION = 7500;
 const SCREEN_INITIAL_TRANSITION_DURATION = 2000;
 const SCREEN_TRANSITION_DURATION = 5000;
 const SCREEN_TRANSITION_FUNCTION = "ease-in-out";
+const COLOR_TRANSITION_DURATION = 1000;
 const INFO_TRANSITION_DURATION = 1000;
 const INFO_INCREMENTAL_DELAY = 150;
 
@@ -16,7 +17,8 @@ var global = {
     copiedHex: document.getElementById("copied-hex")
   },
 
-  currentColor: new Object()
+  currentColor: new Object(),
+  currentTextColor: new String()
 };
 
 window.addEventListener("load", init);

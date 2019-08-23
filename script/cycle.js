@@ -1,6 +1,6 @@
 function cycle(toggleDelay) {
   getColor().then(() => {
-    setScreenBackground();
+    setColors();
     setInfo(INFO_TRANSITION_DURATION);
     toggleInfo(toggleDelay);
   });

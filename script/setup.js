@@ -1,7 +1,7 @@
 function setup() {
   getColor().then(() => {
-    setScreenBackground(0);
-    setInfo(0);
+    setColors();
+    setInfo();
     show(
       global.current.name,
       INFO_TRANSITION_DURATION,

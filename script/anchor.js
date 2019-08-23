@@ -8,23 +8,27 @@ function anchorListener() {
       toggleCopied(e.target, 500);
     });
     element.addEventListener("mouseenter", e => {
-      e.target.style.color = "rgba(255, 255, 255, .75)";
-      e.target.style.transition = "color 500ms ease-in-out";
+      e.target.style.textShadow = `.1rem .2rem .1rem ${
+        global.currentTextColor
+      }`;
+      e.target.style.transition = "all 300ms ease-in-out";
       document.body.style.cursor = "pointer";
     });
     element.addEventListener("mouseleave", e => {
-      e.target.style.color = "rgba(255,255,255, .3)";
+      e.target.style.textShadow = `.1rem .2rem .15rem ${
+        global.currentTextColor
+      }`;
       document.body.style.cursor = "default";
     });
   });
 }
 
 function setDisabled(element) {
-    element.setAttribute("disabled", "disabled");  
+  element.setAttribute("disabled", "disabled");
 }
 
 function removeDisabled(element) {
-    element.removeAttribute("disabled", "disabled");  
+  element.removeAttribute("disabled", "disabled");
 }
 
 function toggleCopied(element, duration) {
