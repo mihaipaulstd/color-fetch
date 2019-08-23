@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Handlee&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  font-family: "Indie Flower", cursive;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 2.5rem;
+}
+
+#screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  opacity: 1;
+}
+
+#screen #current {
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+}
+
+#screen #current a,
+#screen #current span {
+  float: right;
+  color: rgba(255, 255, 255, 0.3);
+  text-shadow: 0.1vh 0.2vw 0.2vw rgba(0, 0, 0, 0.2);
+  opacity: 0;
+}
+
+#screen #current a {
+  clear: right;
+}
+
+a[disabled] {
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 1.5rem;
+  }
+  a, span {
+    margin-bottom: 1.5rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
