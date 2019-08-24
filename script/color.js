@@ -8,7 +8,7 @@ function generateHex() {
   let color = "";
   "xxxxxx"
     .split("")
-    .forEach(char => (color += Math.floor(Math.random() * 16).toString(16)));
+    .forEach(x => (color += Math.floor(Math.random() * 16).toString(16)));
   return color;
 }
 
