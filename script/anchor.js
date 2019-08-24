@@ -1,7 +1,7 @@
 function anchorListener() {
   Object.values(global.current).forEach(element => {
     element.addEventListener("click", e => {
-      setContent(e.target.nextElementSibling, "Copied!", 0);
+      setContent(e.target.previousElementSibling, "Copied!", 0);
       setTransition(e.target, "color", 500, "ease-in-out");
       new ClipboardJS("a");
       e.target.setAttribute("data-clipboard-text", e.target.innerHTML);
@@ -32,6 +32,6 @@ function removeDisabled(element) {
 }
 
 function toggleCopied(element, duration) {
-  show(element.nextElementSibling, 0, 0);
-  hide(element.nextElementSibling, duration, duration);
+  show(element.previousElementSibling, 0, 0);
+  hide(element.previousElementSibling, duration, duration);
 }

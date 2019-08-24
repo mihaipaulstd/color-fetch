@@ -53,6 +53,9 @@ function hide(element, duration = 0, delay = 0) {
 
 function setContent(element, content, delay = 0) {
   setTimeout(() => {
-    element.value ? (element.value = content) : (element.innerHTML = content);
+    try{
+      element.value = content;
+      element.innerHTML = content;
+    }catch(err){}
   }, delay);
 }
