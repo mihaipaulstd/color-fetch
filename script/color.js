@@ -37,7 +37,7 @@ function setColors(delay = 0) {
         global.currentColor.luminance >= 100
           ? "rgba(0, 0, 0, 0.5)"
           : "rgba(255, 255, 255, 0.5)";
-      element.style.textShadow = `.1rem .2rem .15rem ${
+      element.style.textShadow = `.1rem .2rem .1rem ${
         global.currentTextColor
       }`;
     });
