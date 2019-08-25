@@ -47,7 +47,7 @@ a[disabled] {
 
 @media screen and (max-width: 768px) {
   body {
-    font-size: calc(10vw);
+    font-size: calc(8.5vw);
   }
 
   #current {
@@ -61,7 +61,7 @@ a[disabled] {
   }
 
   .grid-row-3 {
-    grid-row-gap: 5rem;
+    grid-row-gap: 2.5rem;
   }
 
   span{
