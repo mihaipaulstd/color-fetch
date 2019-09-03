@@ -60,7 +60,7 @@ a[disabled] {
 
 @media screen and (max-width: 768px) {
   body {
-    font-size: calc(10vw);
+    font-size: calc(8.5vw);
   }
   #current {
     width: 100%;
@@ -75,7 +75,7 @@ a[disabled] {
             justify-content: center;
   }
   .grid-row-3 {
-    grid-row-gap: 5rem;
+    grid-row-gap: 2.5rem;
   }
   span {
     display: none;
